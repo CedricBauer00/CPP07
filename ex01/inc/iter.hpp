@@ -12,10 +12,11 @@ void    iter( T *array, const size_t length, F func ) // for non const
     //  b == length of the array, const
     //  c == function that will be called in every element of the array
 
-    for ( size_t i = 0; i < lenght; i++ )
+    for ( size_t i = 0; i < length; i++ )
     {
         func( array[i] );
     }
+    std::cout << std::endl;
 }
 
 template <typename T, typename F>
@@ -28,8 +29,9 @@ void    iter( const T *array, const size_t length, F func ) //overload for const
 
     for ( size_t i = 0; i < length; i++ )
     {
-        func( const array[i] );
+        func( array[i] );
     }
+    std::cout << std::endl;
 }
 
 // Subject:
