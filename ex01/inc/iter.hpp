@@ -4,9 +4,9 @@
 #include <iostream>
 #include <cstddef>
 
-template <typename t, typename f>
+template <typename T, typename F>
 
-void    iter( t *array, const size_t lenght, t &func ) // for non const
+void    iter( T *array, const size_t lenght, F &func ) // for non const
 {
     //  a == address of an array
     //  b == length of the array, const
@@ -14,13 +14,13 @@ void    iter( t *array, const size_t lenght, t &func ) // for non const
 
     for ( size_t i = 0; i < lenght; i++ )
     {
-        func( &array[i] );
+        func( array[i] );
     }
 }
 
-template <typename t, typename f>
+template <typename T, typename F>
 
-void    iter( const t *array, const size_t length, f &func ) //overload for const
+void    iter( const T *array, const size_t length, F &func ) //overload for const
 {
     //  a == address of an array
     //  b == length of the array, const
