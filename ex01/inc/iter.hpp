@@ -6,7 +6,7 @@
 
 template <typename t, typename f>
 
-void    iter( t *array, const t lenght, t &func ) // for non const
+void    iter( t *array, const size_t lenght, t &func ) // for non const
 {
     //  a == address of an array
     //  b == length of the array, const
@@ -14,13 +14,13 @@ void    iter( t *array, const t lenght, t &func ) // for non const
 
     for ( size_t i = 0; i < lenght; i++ )
     {
-        c( &a[i] );
+        func( &array[i] );
     }
 }
 
 template <typename t, typename f>
 
-void    iter( const t *array, const t length, f &func ) //overload for const
+void    iter( const t *array, const size_t length, f &func ) //overload for const
 {
     //  a == address of an array
     //  b == length of the array, const
@@ -28,7 +28,7 @@ void    iter( const t *array, const t length, f &func ) //overload for const
 
     for ( size_t i = 0; i < length; i++ )
     {
-        c( const array[i] );
+        func( const array[i] );
     }
 }
 
