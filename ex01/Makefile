@@ -2,7 +2,7 @@ NAME = NAME
 
 SRC = src/main.cpp
 
-OBJ := 	$(SRC:%.cpp%=.O)
+OBJ := 	$(SRC:%.cpp%=.o)
 
 CXX = c++
 CXXFLAGS = -Werror -Wextra -Wall -std=c++98
@@ -18,6 +18,6 @@ $(NAME): $(OBJ)
 fclean:
 	@rm -f $(NAME) $(OBJ) > /dev/null && echo "\033[31mProgramm cleared successfully!\033[0m"
 
-re: fclean a;;
+re: fclean a;
 
 .PHONY: all fclean re
