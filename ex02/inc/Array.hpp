@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 #include <cstddef>
+#include <stdexcept>
 
 template <typename T>
 
@@ -58,4 +59,16 @@ public:
         return ( this->_size );
     } //returns the size of the array -- number of elements
 
+    T&  operator[]( unsigned int i )
+    {
+        if ( i >= this->_size )
+            throw( std::out_of_range( "Index out of bounds!" ) );
+        return ( this->_array[ i ] );
+    }
+
+    const T&    operator[]( unsigned int i ) const
+    {
+        if ( i >= this->_size)
+            throw( std::out_of_range( "Index out of bounds!" ) );
+    }
 };
