@@ -1,5 +1,7 @@
 #include "../inc/template.hpp"
 
+// = = = = = = = = = subject main = = = = = = = = = //
+
 // int main( void ) {
 // int a = 2;
 // int b = 3;
@@ -16,6 +18,34 @@
 // return 0;
 // }
 
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = //
+
+// = = = = = = = = = Evaluation sheet tests = = = = = = = = = //
+
+class Awesome
+{
+    public:
+    Awesome(void):_n(0) {}
+    Awesome(int n):_n(n) {}
+    Awesome & operator=(Awesome & a) { _n = a._n; return *this; }
+    bool operator==(Awesome const &rhs) const { return ( this->_n == rhs._n);}
+    bool operator!=(Awesome const &rhs) const { return (this->_n != rhs._n);}
+    bool operator>(Awesome const &rhs) const { return (this->_n > rhs._n);}
+    bool operator<(Awesome const &rhs) const { return (this->_n < rhs._n);}
+    bool operator>=(Awesome const &rhs) const { return (this->_n >= rhs._n);}
+    bool operator<=(Awesome const &rhs) const { return (this->_n <= rhs._n);}
+    int get_n() const { return _n;}
+    private:
+    int _n;
+};
+
+std::ostream& operator<<(std::ostream& o, const Awesome& a)
+{
+    o << a.get_n();
+    return o;
+}
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = //
 
 int main( void )
 {
@@ -27,7 +57,7 @@ int main( void )
         std::cout << "a = " << a << ", b = " << b << std::endl;
         std::cout << YELLOW << "min( a, b ) = " << ::min( a, b ) << RESET << std::endl;
         std::cout << YELLOW << "max( a, b ) = " << ::max( a, b ) << RESET << std::endl;
-        std::cout << "\nSame value should return second param" << std::endl;
+        std::cout << "\nSame value size should return second param" << std::endl;
         std::cout << YELLOW << "min( a, b ) = " << ::min( a, a ) << RESET << std::endl;
         std::cout << YELLOW << "max( a, b ) = " << ::max( b, b ) << RESET << std::endl;
     }
@@ -39,6 +69,15 @@ int main( void )
         std::cout << "c = " << c << ", d = " << d << std::endl;
         std::cout << YELLOW << "min( c, d ) = " << ::min( c, d ) << RESET << std::endl;
         std::cout << YELLOW << "max( c, d ) = " << ::max( c, d ) << RESET << std::endl;
+    }
+    std::cout << BRIGHTBLUE << "\n----- Evaluation sheet test -----" << RESET << std::endl;
+    {
+        //evaluation sheet test
+        Awesome a( 2 ), b( 4 );
+        ::swap( a, b );
+        std::cout << "a=" << a << " b=" << b << std::endl;
+        std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+        std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
     }
     return ( 0 );
 }

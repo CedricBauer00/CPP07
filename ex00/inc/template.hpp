@@ -12,25 +12,25 @@
 #define CYAN    "\033[36m"
 #define BRIGHTBLUE  "\033[38;5;75m"
 
-template <typename t>
+template <typename T>
 
-void   swap( t &a, t &b )
+void   swap( T &a, T &b )
 {
-    t   tmp;
+    T   tmp;
 
     tmp = a;
     a = b;
     b = tmp;
 }
 
-template <typename t>
+template <typename T>
 
-const t&    min( t &a, t &b )
+const T&    min( T &a, T &b )
 {
-    return ( a < b ? b : a );
+    return ( b <= a) ? b : a;
 }
 
-// const t&    min( t &a, t &b ) //reference == good practice, would work aswell with only copy
+// const T&    min( T &a, T &b ) //reference == good practice, would work aswell with only copy
 // {
 //     if ( a == b )
 //         return ( b );
@@ -40,14 +40,14 @@ const t&    min( t &a, t &b )
 //         return ( a );
 // }
 
-template <typename t>
+template <typename T>
 
-const   t&  max( t &a, t &b )
+const   T&  max( T &a, T &b )
 {
-    return ( a > b ? b : a );
+    return ( b >= a ) ? b : a;
 }
 
-// const t&    max( t &a, t &b )
+// const T&    max( T &a, T &b )
 // {
 //     if ( a == b )
 //         return ( b );
