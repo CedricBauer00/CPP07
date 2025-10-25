@@ -15,3 +15,40 @@ std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
 std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
 return 0;
 }
+
+// Das ist das evaluation sheet zu dieser aufgabe:
+
+// EX00: Start with a few functions
+// This exercise is about writing 3 simple function templates: swap(), min() and max().
+
+// Simple types
+// Refer to the subject for the expected output with simple types, such as int.
+
+// Complex types
+// Do the functions also work with complex types such as:
+// class Awesome
+// {
+//     public:
+//     Awesome(void):_n(0) {}
+//     Awesome(int n):_n(n) {}
+//     Awesome & operator=(Awesome & a) { _n = a._n; return *this; }
+//     bool operator==(Awesome const &rhs) const { return ( this->_n == rhs._n);}
+//     bool operator!=(Awesome const &rhs) const { return (this->_n != rhs._n);}
+//     bool operator>(Awesome const &rhs) const { return (this->_n > rhs._n);}
+//     bool operator<(Awesome const &rhs) const { return (this->_n < rhs._n);}
+//     bool operator>=(Awesome const &rhs) const { return (this->_n >= rhs._n);}
+//     bool operator<=(Awesome const &rhs) const { return (this->_n <= rhs._n);}
+//     int get_n() const { return _n;}
+//     private:
+//     int _n;
+// };
+// std::ostream & operator<<(std::ostream & o, const Awesome &a) {o << a.get_n(); return o;}
+
+// int main(void)
+// {
+//     Awesome a(2), b(4);
+
+//     swap(a, b);
+//     std::cout<< a << " " << b << std::endl;
+//     std::cout << max(a, b) << std::endl;
+// }
