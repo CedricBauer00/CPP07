@@ -27,7 +27,7 @@ template <typename t>
 
 const t&    min( t &a, t &b )
 {
-    return ( b < a ? b : a );
+    return ( a < b ? b : a );
 }
 
 // const t&    min( t &a, t &b ) //reference == good practice, would work aswell with only copy
@@ -44,7 +44,7 @@ template <typename t>
 
 const   t&  max( t &a, t &b )
 {
-    return ( a < b ? b : a );
+    return ( a > b ? b : a );
 }
 
 // const t&    max( t &a, t &b )

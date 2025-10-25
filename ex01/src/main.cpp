@@ -3,23 +3,23 @@
 // = = = = = = = = = Evaluation sheet tests = = = = = = = = = //
 // why was nothing said about that in the actual subject sheet???
 
-class Awesome
-{
-    private:
-        int _n;
-    public:
-        Awesome( void ) : _n(42) {}
-        int get( void ) const { return this->_n; }
-};
+// class Awesome
+// {
+//     private:
+//         int _n;
+//     public:
+//         Awesome( void ) : _n(42) {}
+//         int get( void ) const { return this->_n; }
+// };
 
-std::ostream& operator<<( std::ostream& o, Awesome const& rhs )
-{
-    o << rhs.get();
-    return o;
-}
+// std::ostream& operator<<( std::ostream& o, Awesome const& rhs )
+// {
+//     o << rhs.get();
+//     return o;
+// }
 
-template <typename T>
-void print( T const& x ) { std::cout << x << std::endl; }
+// template <typename T>
+// void print( T const& x ) { std::cout << x << std::endl; }
 
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = //
 
@@ -74,13 +74,13 @@ int main()
         std::cout << std::endl;
     }
 
-    std::cout << BRIGHTBLUE << "----- evaluation sheet test -----" << RESET << std::endl;
-    {
-        int tab[] = {0, 1, 2, 3, 4};
-        Awesome tab2[5];
+    // std::cout << BRIGHTBLUE << "----- evaluation sheet test -----" << RESET << std::endl;
+    // {
+    //     int tab[] = {0, 1, 2, 3, 4};
+    //     Awesome tab2[5];
 
-        iter(tab, 5, print); // should ouput 0, ... 4
-        iter(tab2, 5, print); // shoudl print 42 5 times
-    }
+    //     iter(tab, 5, print); // should ouput 0, ... 4
+    //     iter(tab2, 5, print); // shoudl print 42 5 times
+    // }
     return ( 0 );
 }
