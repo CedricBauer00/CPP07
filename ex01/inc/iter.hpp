@@ -3,35 +3,31 @@
 #include <string>
 #include <iostream>
 #include <cstddef>
+#include <cctype>
+#define RESET   "\033[0m"
+#define RED     "\033[31m"
+#define GREEN   "\033[32m"
+#define YELLOW  "\033[33m"
+#define BLUE    "\033[34m"
+#define MAGENTA "\033[35m"
+#define CYAN    "\033[36m"
+#define BRIGHTBLUE  "\033[38;5;75m"
+
 
 template <typename T, typename F>
 
 void    iter( T *array, const size_t length, F func ) // for non const
 {
-    //  a == address of an array
-    //  b == length of the array, const
-    //  c == function that will be called in every element of the array
-
     for ( size_t i = 0; i < length; i++ )
-    {
         func( array[i] );
-    }
-    std::cout << std::endl;
 }
 
 template <typename T, typename F>
 
 void    iter( const T *array, const size_t length, F func ) //overload for const
 {
-    //  a == address of an array
-    //  b == length of the array, const
-    //  c == function that will be called in every element of the array
-
     for ( size_t i = 0; i < length; i++ )
-    {
         func( array[i] );
-    }
-    std::cout << std::endl;
 }
 
 // Subject:

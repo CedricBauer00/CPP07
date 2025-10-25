@@ -1,4 +1,4 @@
-NAME = NAME
+NAME = iter
 
 SRC = src/main.cpp
 
